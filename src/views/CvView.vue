@@ -1,16 +1,19 @@
 <template>
+<v-layout>
 <v-container>
   <v-layout>
     <v-flex xs12 sm6 offset-sm3>
-      <v-card @click.stop="drawer = !drawer">
+      <v-card >
         <div class='v-card-body'>
         <Header/>
         <v-card-title primary-title >
           <div>
-            <span class="headline mb-0"><h3 >Nicolas Richaud -Developpeur php</h3>    </span>
+            <span class="headline mb-0"><h3 >Nicolas Richaud - Developpeur php</h3>    </span>
             <div> 4 ans d'expérience</div>
           </div>
         </v-card-title>
+          
+<SidebarToggle/>
         <SkillsList/>
         <Formation/>
         </div>
@@ -18,148 +21,11 @@
       
     </v-flex>
   </v-layout>
-      <v-navigation-drawer
-      v-model="drawer"
-      absolute
-      temporary
-      fixed
-    >
-      <v-list class="pa-1">
-        <v-list-tile avatar>
-          <v-list-tile-avatar>
-            
-          </v-list-tile-avatar>
-
-          <v-list-tile-content>
-            <v-list-tile-title>Synthèse des compétences</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-
-      <v-form v-model="valid">
-    <v-container>
-      <v-layout>
-        <v-flex
-         sm12 d-flex
-        >
-          <v-select
-                v-model="select"
-                label="Langages"
-                chips
-                tags
-                :items="items"
-              ></v-select>
-        </v-flex>
-        </v-layout>
-        <v-layout>
-        <v-flex
-         sm12 d-flex
-        >
-          <v-select
-                v-model="select"
-                label="Framework(s) et API(s)"
-                chips
-                tags
-                :items="items"
-              ></v-select>
-        </v-flex>
-      </v-layout>
-      <v-layout>
-        <v-flex
-         sm12 d-flex
-        >
-          <v-select
-                v-model="select"
-                label="Serveur"
-                chips
-                tags
-                :items="items"
-              ></v-select>
-        </v-flex>
-      </v-layout>
-      <v-layout>
-        <v-flex
-         sm12 d-flex
-        >
-          <v-select
-                v-model="select"
-                label="Gestionnaire de version"
-                chips
-                tags
-                :items="items"
-              ></v-select>
-        </v-flex>
-      </v-layout>
-      <v-layout>
-        <v-flex
-         sm12 d-flex
-        >
-          <v-select
-                v-model="select"
-                label="Systeme"
-                chips
-                tags
-                :items="items"
-              ></v-select>
-        </v-flex>
-      </v-layout>
-      <v-layout>
-        <v-flex
-         sm12 d-flex
-        >
-          <v-select
-                v-model="select"
-                label="Methodologies"
-                chips
-                tags
-                :items="items"
-              ></v-select>
-        </v-flex>
-      </v-layout>
-      <v-layout>
-        <v-flex
-         sm12 d-flex
-        >
-          <v-select
-                v-model="select"
-                label="Conception"
-                chips
-                tags
-                :items="items"
-              ></v-select>
-        </v-flex>
-      </v-layout>
-      <v-layout>
-        <v-flex
-         sm12 d-flex
-        >
-          <v-select
-                v-model="select"
-                label="Webservices"
-                chips
-                tags
-                :items="items"
-              ></v-select>
-        </v-flex>
-      </v-layout>
-      <v-layout>
-        <v-flex
-         sm12 d-flex
-        >
-          <v-select
-                v-model="select"
-                label="Autres outils et techno"
-                chips
-                tags
-                :items="items"
-              ></v-select>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-form>
-    </v-navigation-drawer>
+    
+    
   </v-container>
-
+ <Sidebar/>
+</v-layout>
   
 </template>
 
@@ -167,12 +33,16 @@
   import SkillsList from '../components/SkillsList'
   import Formation from '../components/Formation'
   import Header from '../components/Header'
+  import Sidebar from '../components/CV/Sidebar/Sidebar'
+  import SidebarToggle from '../components/CV/Sidebar/SidebarToggle.vue'
 
   export default {
     components: {
       SkillsList,
       Formation,
-      Header
+      Header,
+      Sidebar,
+SidebarToggle
     }
     ,
     data () {
