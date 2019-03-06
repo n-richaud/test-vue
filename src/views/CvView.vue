@@ -3,11 +3,11 @@
 <v-container>
   <v-layout>
     <v-flex xs12 sm8 offset-sm2>
-      <v-card >
-        <Header/>
-        <div class='v-card-body'>
+      <v-card id="page">
         
-        <v-card-title primary-title >
+        <div class='v-card-body'>
+        <Header/>
+        <v-card-title primary-title class="dashed" >
           <div>
             <span class="headline mb-0"><h3 >Nicolas Richaud - Developpeur php</h3> <SidebarToggle/>   </span>
             <div> 4 ans d'expérience</div>

@@ -1,8 +1,8 @@
 <template>
-  <div  class="sidebar">
+  <v-card  class="sidebar">
   <v-layout>
 
-    <v-flex xs3 sm3>cacher l'éditeur</v-flex>
+    <v-flex xs3 sm3><v-icon>arrow_back</v-icon>cacher l'éditeur</v-flex>
     <v-spacer></v-spacer>
     <v-flex xs6 sm6>
       <select
@@ -33,7 +33,7 @@
   </v-flex>
   </v-layout>
 </v-container>  
-</div>
+  </v-card>
 </template>
 
 <script>

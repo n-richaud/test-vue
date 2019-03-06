@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="dashed">
     <v-layout
       align-start
       column
@@ -74,4 +74,5 @@
 .skillList{
     width: 30%;
 }
+
 </style>
