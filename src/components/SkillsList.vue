@@ -13,54 +13,57 @@
 
        
       
-          <v-layout justify-space-between mb-5 v-for="(skills, i) in skillsSummmary" :key="i"><div class="skillType">{{ skills.skillType }}</div> <div class="skillList">- {{ skills.skill.join(', ') }}</div></v-layout>
+          <v-layout justify-space-between mb-5 v-for="(skill, i) in skills" :key="i">
+            <div class="skillType">{{ skillsLabel[i+""] }}-{{i}}</div>
+            <div class="skillList">{{skill.join("-")}}-</div>
+          </v-layout>
 
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 <script>
+import {mapState,mapGetters} from'vuex'
   export default {
+    computed: mapState(['skills']),
     data: () => ({
 
-      skillsSummmary: [
-        {
-          skillType: 'Langages',
-          skill: ['PHP5/7', 'HTML5', 'CSS3', 'SASS', 'JavaScript', 'C#', 'C', 'C++', 'scripts shell','Java', 'Python', 'PLSQL']
-        },
-        {
-          skillType: 'Framework(s) et API(s)',
-          skill: ['Symfony2/3/4', 'Jquery', 'Cakephp 2.3' , 'Bootstrap' , 'vue.js 2' , 'React']
-        },
-        {
-          skillType: 'Serveur',
-          skill: ['Nginx', 'Apache']
-        },
-        {
-          skillType: 'Gestionnaire de version',
-          skill: ['Git', 'GitLab' , 'BitBucket']
-        },
-        {
-          skillType: 'Systeme',
-          skill: ['Windows', 'Linux', 'Android', 'iOS', 'OS X']
-        },
-        {
-          skillType: 'Methodologies',
-          skill: ['méthodes agiles (scrum, Kanban)', 'TDD', 'BDD', 'versioning' , 'poker planning' , 'sprint planning']
-        },
-        {
-          skillType: 'Conception',
-          skill: ['UML']
-        },
-        {
-          skillType: 'Webservices',
-          skill: ['REST', 'SOAP']
-        },
-        {
-          skillType: 'Autres outils et techno',
-          skill: ['NetBeans', 'Xcode', 'Eclipse', 'Circle CI', 'Ansible', 'RabbitMQ']
+      skillsLabel: {
+        Languages: 'Langages'
         }
-      ],
+      //   {
+      //     id:'framework',
+      //     skillType: 'Framework(s) et API(s)',   
+      //   },
+      //   {
+      //     id:'server',
+      //     skillType: 'Serveur',      
+      //   },
+      //   {
+      //     id:'versioningTools',
+      //     skillType: 'Gestionnaire de version',
+      //   },
+      //   {
+      //     id:'system',
+      //     skillType: 'Systeme',
+      //   },
+      //   {
+      //     id:'methodology',
+      //     skillType: 'Methodologies',
+      //   },
+      //   {
+      //     id:'conception',
+      //     skillType: 'Conception',
+      //   },
+      //   {
+      //     id:'webservices',
+      //     skillType: 'Webservices',
+      //   },
+      //   {
+      //     id:'other',
+      //     skillType: 'Autres outils et techno',
+      //   }
+      // ],
      
     })
   }
