@@ -3,7 +3,7 @@
 <v-container>
   <v-layout>
     <v-flex xs12 sm8 offset-sm2>
-      <v-card id="page">
+      <v-card class="page">
         
         <div class='v-card-body'>
         <Header/>
@@ -25,52 +25,24 @@
 
     <v-layout style="margin-top: 70px;">
     <v-flex xs12 sm8 offset-sm2>
-      <v-card >
+      <v-card class="page" >
         <div class='v-card-body'>
         <Header/>
         <v-card-title primary-title >
-          <div>
-            <span class="headline mb-0"><h3 >Nicolas Richaud - Developpeur php</h3>    </span>
-            <div> 4 ans d'expérience</div>
-          </div>
-        </v-card-title>
+                  
+        
+           
+            <JobDescription/>
           
-EXPÉRIENCE(S)
+        </v-card-title>
 
-Mister-Auto                                            1 mois : Janvier 2018
-
-Sujet du projet : Amélioration des performances de l’appli et de l’environnement de dev 
-              
-Mister-Auto est un site e-commerce de vente de pièces automobiles.
-
-Responsabilités occupées : 
-Développeur / Devops
-
-Équipe : 
-Lead developer (back et front)
-1 Développeur front    
-2 Junior Développeur (back et front)
-
-Travail réalisé : 
-              
-Profiling de l’appli avec blackfire, et écriture de recommandation
-Profiling de la génération des assets 
-Investigation source slowqueries Mysql
-Optimisation farm docker de dev
-Soutien aux developpeur junior 
+<JobTeam/>
+<JobSkills/>
 
 
-Langage : PHP,Javascript ES6, HTML, Sass/CSS
-Framework(s): Zend Expressive, Doctrine, AngularJs
-Versionning : Github (gitFLow)
-Système : Windows 10, Linux debian
-Méthodologie : Peer Review, Poker Planning, Sprint Planning
-Outils de développement : Sublime text /PhPstorm /Vscode
-Base de données : Mysql
-Autres : RabbitMQ, Supervisor, Esendex,Redis
 
-        <SkillsList/>
-        <Formation/>
+
+      
         </div>
       </v-card>
       
@@ -90,6 +62,10 @@ Autres : RabbitMQ, Supervisor, Esendex,Redis
   import Header from '../components/Header'
   import Sidebar from '../components/CV/Sidebar/Sidebar'
   import SidebarToggle from '../components/CV/Sidebar/SidebarToggle.vue'
+  import JobResume from '../components/JobResume.vue'
+  import JobDescription from '../components/JobDescription.vue'
+  import JobSkills from '../components/JobSkills.vue'
+  import JobTeam from '../components/JobTeam.vue'
 
   export default {
     components: {
@@ -97,7 +73,11 @@ Autres : RabbitMQ, Supervisor, Esendex,Redis
       Formation,
       Header,
       Sidebar,
-SidebarToggle
+      SidebarToggle,
+      JobResume,
+      JobDescription,
+      JobSkills,
+      JobTeam
     }
     ,
     data () {
@@ -113,5 +93,9 @@ SidebarToggle
 <style>
 .v-card-body{
   margin-left: 94.4882px; margin-right: 75.1333px;
+}
+.page{
+  width: 21cm;
+  height: 29.7cm; 
 }
 </style>

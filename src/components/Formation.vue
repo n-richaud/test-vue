@@ -42,10 +42,5 @@ import {mapState} from'vuex'
 </script>
 
 <style>
-.title{
-    text-transform: uppercase;
-    color: #7ef36b;
-    font-size: 26px; 
 
-}
 </style>

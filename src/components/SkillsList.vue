@@ -13,10 +13,12 @@
 
        
       
+
           <v-layout justify-space-between mb-5 v-for="(skill, i) in skills" :key="i">
             <div class="skillType">{{ skillsLabel[i+""] }}-{{i}}</div>
             <div class="skillList">{{skill.join("-")}}-</div>
           </v-layout>
+
 
       </v-flex>
     </v-layout>
@@ -69,7 +71,7 @@ import {mapState,mapGetters} from'vuex'
   }
 </script>
 
-<style>
+<style scoped>
 .skillType{
     text-transform: uppercase;
 

@@ -16,3 +16,15 @@
 
     background-color: #ffa;
 } */
+
+.title{
+    
+    color: #7ef36b;
+    font-size: 26px; 
+
+}
+.title-upper{
+    text-transform: uppercase;
+    color: #7ef36b;
+
+}
